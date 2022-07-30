@@ -12,10 +12,7 @@ document.getElementById("clear").addEventListener("click",() => {
     let expression = null;
     let inputScreen = "";
  })
- document.getElementById("decimal").addEventListener("click",() => {
-    inputScreen = ".";
-    screen.value = inputScreen;
- })
+
  document.getElementById("equal").addEventListener("click",() => {
     screen.value = calculate(firstOperand,expression,inputScreen);
     inputScreen = "";
@@ -39,13 +36,13 @@ function calculate (op,ex,inSc){
 
 for (let i=0; i<numbers.length; ++i){
     numbers[i].addEventListener("click" , () => {
-        inputScreen += this.value;
+        inputScreen += numbers[i].value;
         screen.value = inputScreen;
     },false )
 }
 for (let i=0; i<operations.length; ++i){
     operations[i].addEventListener("click" , () => {
-        expression = this.value;
+      expression = operations[i].value;
         firstOperand = inputScreen;
         inputScreen = "";
         screen.value = 0;    
