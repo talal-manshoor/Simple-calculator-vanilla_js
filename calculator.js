@@ -6,6 +6,7 @@ const screen = document.getElementById("result");
 const numbers = document.getElementsByClassName("numerals");
 const operations = document.getElementsByClassName("operator")
 
+
 document.getElementById("clear").addEventListener("click",() => {
     screen.value = 0;
     let firstOperand = null;
@@ -18,6 +19,33 @@ document.getElementById("clear").addEventListener("click",() => {
     inputScreen = "";
     firstOperand = null;
     expression = null;
+ })
+
+ const theme = document.getElementById("theme");
+ theme.addEventListener("click" , () => {
+    if(theme.innerHTML == "🌞"){
+    document.body.style.backgroundColor = "white";
+    document.getElementById("calculator").style.border = "3px solid black"
+    document.getElementById("container").style.border = "3px solid black"
+    theme.innerHTML = "🌜";
+    }
+    else{
+        document.body.style.backgroundColor = "black";
+        document.getElementById("calculator").style.border = "3px solid white"
+        document.getElementById("container").style.border = "3px solid white"
+        theme.innerHTML = "🌞"; 
+    }
+ })
+
+ let AC =  document.getElementById("onoff").addEventListener("click", () => {
+    if (screen.value === ""){
+        screen.value = "0";
+        AC.value = "ON" 
+    }
+    else{
+    screen.value = "";
+    AC.value = "OFF"
+    }
  })
 
 function calculate (op,ex,inSc){

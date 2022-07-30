@@ -9,13 +9,13 @@
 </head>
 <body>
     <script src="./calculator.js" defer></script>
-    <div class="container">
-        <input type="text" class="screen" id="result" value="0" disabled>
+    <div class="container" id="container">
+        <input type="text" class="screen" id="result" value="" disabled>
             
-        <div class="calculator">    
+        <div class="calculator" id="calculator">    
             <button class="calculator clear" id="clear" value="clear">Cl</button>
-            <button class="calculator del" id="del" value="backspace">Del</button>
-            <button class="calculator del" id="del" value="backspace">Del</button>
+            <button class="calculator theme" id="theme" value="sun" onclick="themeChange()">🌞</button>
+            <button class="calculator switch" id="onoff" value="OFF">AC</button>
             
             <button class="operator" value="+">➕</button>
             <button class="operator" value="-">➖</button>
